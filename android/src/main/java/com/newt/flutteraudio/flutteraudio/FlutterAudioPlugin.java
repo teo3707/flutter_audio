@@ -10,11 +10,14 @@ import io.flutter.plugin.common.PluginRegistry.Registrar;
  * FlutterAudioPlugin
  */
 public class FlutterAudioPlugin implements MethodCallHandler {
+
+  final static String TAG = "newt_flutter_audio";
+
   /**
    * Plugin registration.
    */
   public static void registerWith(Registrar registrar) {
-    final MethodChannel channel = new MethodChannel(registrar.messenger(), "flutter_audio");
+    final MethodChannel channel = new MethodChannel(registrar.messenger(), TAG);
     channel.setMethodCallHandler(new FlutterAudioPlugin());
   }
 
